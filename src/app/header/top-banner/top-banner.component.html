@@ -1,5 +1,10 @@
 <div style="background-image: url('https://images.pexels.com/photos/413195/pexels-photo-413195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');width: 100%;height: 50%; object-fit: contain;">
+    <div style="float: right;"><input type="button" class="searchbtn" value="{{searchbutton}}" (click)="onClick()"></div>
+    <div [hidden]="ser">
+        <div style="float: right;"><input type="submit" class="searchbtn" value="SUBMIT"></div>
+        <div style="float: right;"><input type="text" class="search" ></div>
+    </div>
     <div style="display: grid; font-style: italic; text-align: center;">
-        <h1 style="color: blueviolet">Welcome to my webpage</h1>
+        <h3 style="color: rgb(219, 65, 65)">Welcome to my webpage</h3>
     </div>
 </div>

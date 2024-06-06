@@ -1,1 +1,38 @@
-<p>login works!</p>
+<label for="exampleFormControlInput1" class="form-label">{{loginMessage}}</label>
+<form class="row g-3">
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="exampleFormControlInput1" class="form-label">{{email}}</label>
+  </div>
+  <div class="col-auto">
+    <input type="email" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+  <div class="col-auto">
+    <span id="passwordHelpInline" class="form-text">
+      Not a valid email.
+    </span>
+  </div>
+</div>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="exampleFormControlInput1" class="form-label">{{password}}</label>
+  </div>
+  <div class="col-auto">
+    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+  <div class="col-auto">
+    <span id="passwordHelpInline" class="form-text">
+      Must be 8-20 characters long.
+    </span>
+  </div>
+</div>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="exampleFormControlInput1" class="form-label"></label>
+  </div>
+  <div class="col-auto">
+    <input type="submit" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+  </div>
+ 
+</div>
+</form>

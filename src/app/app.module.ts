@@ -6,6 +6,7 @@ import { ReistrationComponent } from './registration/registration.component';
 import { HeaderComponent } from './header/app.header.component';
 import { LoginComponent } from './login/login.component';
 import { TopBannerComponent } from './header/top-banner/top-banner.component';
+import { ProductlistComponent } from './productlist/productlist.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TopBannerComponent } from './header/top-banner/top-banner.component';
     ReistrationComponent,
     HeaderComponent,
     LoginComponent,
-    TopBannerComponent
+    TopBannerComponent,
+    ProductlistComponent
 
   ],
   imports: [

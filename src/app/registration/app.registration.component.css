@@ -1,8 +1,28 @@
 
 table{
-    background-color:blueviolet;
+    background-color:rgb(100, 73, 124);
 }
 
 tr{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+td{
+    display: block;
+    margin: auto;
+}
+.registrationForm{
+    border-radius: 15px;
+    background: #fffdfd;
+    padding: 14px;
+    width: 230px;
+    height: 3px;
+}
+.registerbtn {
+    border-radius: 15px;
+    background: #212d67;
+    padding: 2px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    color: #ffffff;
+  }
