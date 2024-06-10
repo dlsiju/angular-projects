@@ -1,8 +1,18 @@
 
+<div class="prod-details">
+    <div>
+        <img bind-src="product1.image">
+    </div>
 <h3>Product details</h3>
 <P>Name:{{product1.name}}</P>
 <P>Brand:{{product1.brand}}</P>
 <P>Proce:{{product1.price}}</P>
 <P>Discount price:{{product1.discountprice}}</P>
 <P>Final price:{{getDiscount()}}</P>
-<P>{{product1.discountprice>0 ? 'You will get discoune of '+product1.discountprice:'normal price'}}</P>
+<P>{{product1.discountprice>0 ? 'You will get discoune of '+product1.discountprice:'price'}}</P>
+<button (click)="decrementProductCount()">-</button>
+<span>{{productCount}}</span>
+<button (click)="incrementProductCount()">+</button>
+<div><button [disabled]="!(product1.stock>0)"  class="buynow">BUY NOW</button>
+</div>
+</div>

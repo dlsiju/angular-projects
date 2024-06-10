@@ -8,11 +8,15 @@ import { Component } from '@angular/core';
 export class ProductlistComponent {
 
    results:any = [];
+   productType=''
+   productCount=0;
   product1={
     name : 'PHONE',
     brand:'Rredmi',
     price:54000,
-    discountprice:2000
+    discountprice:2000,
+    image:'assets/images/redmi_11_prime_5g_light_india_3.png',
+    stock:4
   }
   product2={
     name : 'PHONE',
@@ -49,6 +53,23 @@ export class ProductlistComponent {
 
   getDiscount(){
     return this.product1.price - this.product1.discountprice
+  }
+
+  onvalueChange(event:any){
+    this.productType=event.target.value
+
+  }
+
+  incrementProductCount(){
+    if(this.productCount<this.product1.stock){
+      this.productCount++
+    }
+  }
+
+  decrementProductCount(){
+    if(this.productCount>0){
+      this.productCount--
+    }
   }
 
 }
