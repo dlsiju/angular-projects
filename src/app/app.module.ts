@@ -7,7 +7,12 @@ import { HeaderComponent } from './header/app.header.component';
 import { LoginComponent } from './login/login.component';
 import { TopBannerComponent } from './header/top-banner/top-banner.component';
 import { ProductlistComponent } from './productlist/productlist.component';
-
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
+import { BrandComponent } from './brand/brand.component';
+import { ProductComponent } from './search/product/product.component';
+import { FilterComponent } from './search/filter/filter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,11 +20,17 @@ import { ProductlistComponent } from './productlist/productlist.component';
     HeaderComponent,
     LoginComponent,
     TopBannerComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    SearchComponent,
+    BrandComponent,
+    ProductComponent,
+    FilterComponent,
 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

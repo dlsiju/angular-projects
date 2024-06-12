@@ -1,0 +1,19 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="prod.image" class="img-thumbnail" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{prod.name}}</h5>
+            <div>
+                <h6 class="card-title"><div style="float: left;">RAM</div></h6>
+                <span class="border-top" *ngFor="let rm of prod.ram;index as i"><span class="border-bottom">
+                    <span class="border-start"><span class="border-end">{{rm}}</span></span>
+                </span></span>
+            </div>
+                <br>
+            <h5 class="card-title">{{'₹'+prod.price}}</h5>
+            <p class="card-text">{{'Color:'+prod.color}}</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <span class="border"></span>
+
+        </div>
+</div>
+

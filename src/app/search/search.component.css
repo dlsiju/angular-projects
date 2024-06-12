@@ -1,0 +1,10 @@
+
+img.img-thumbnail{
+width: 90px;
+height: 90px;
+}
+.btn-search{
+    padding: 2px 20px;
+    margin-left: 0px;
+    background-color: blue;
+}

@@ -1,0 +1,11 @@
+
+<div>
+
+    <div class="searchdiv" style="float: left;">
+        <input type="text" style="width: 100%;" [(ngModel)]="searchKeyword">
+    </div>
+    <div style="float: left;"> <button type="button" [ngClass]="{'btn-search':searchKeyword}" [disabled]="!searchKeyword">Button</button></div> 
+    <div>Searched forr:{{searchKeyword}}</div>    
+</div>
+<app-filter [all]="allProductCount" [mediumPrice]="mediumPriceProductCount" [abovemaximumPrice]="maximumPriceProductCount"></app-filter>
+<app-product *ngFor="let prod of products" [prod]="prod"></app-product>
