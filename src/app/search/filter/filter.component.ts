@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -13,5 +13,16 @@ export class FilterComponent {
   mediumPrice:number=0
   @Input()
   abovemaximumPrice:number=0
+
+  
+  initialSelectedRadioButton="all"
+
+  @Output()
+  eventEmiter = new EventEmitter<string>()
+
+  radioButtonSelectionChanged(){
+    console.log("radio buttin selected="+this.initialSelectedRadioButton)
+    this.eventEmiter.emit(this.initialSelectedRadioButton)
+  }
 
 }

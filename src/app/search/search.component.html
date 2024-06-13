@@ -5,7 +5,10 @@
         <input type="text" style="width: 100%;" [(ngModel)]="searchKeyword">
     </div>
     <div style="float: left;"> <button type="button" [ngClass]="{'btn-search':searchKeyword}" [disabled]="!searchKeyword">Button</button></div> 
-    <div>Searched forr:{{searchKeyword}}</div>    
+    <div>Searched for:{{searchKeyword}}</div>    
 </div>
-<app-filter [all]="allProductCount" [mediumPrice]="mediumPriceProductCount" [abovemaximumPrice]="maximumPriceProductCount"></app-filter>
-<app-product *ngFor="let prod of products" [prod]="prod"></app-product>
+<app-filter [all]="allProductCount" [mediumPrice]="mediumPriceProductCount" [abovemaximumPrice]="maximumPriceProductCount" (eventEmiter)="filterRadioChanged($event)"></app-filter>
+
+<div *ngFor="let prod of products">
+    <app-product [prod]="prod" *ngIf="(filterPriceValue==='med'?prod.price<30000:filterPriceValue=='max'?prod.price>30001:prod.price>0)&&(prod.name.toLowerCase().includes(searchKeyword.toLowerCase()))"></app-product>
+</div>

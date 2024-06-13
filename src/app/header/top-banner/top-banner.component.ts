@@ -9,6 +9,7 @@ export class TopBannerComponent {
 
   searchbutton="Search"
   ser=true
+  baseSearchKey=''
   onClick(){
     if(this.ser==false){
       this.ser=true
@@ -18,6 +19,10 @@ export class TopBannerComponent {
       this.searchbutton='Close'
     }
      console.log('dfdggfg')
+  }
+  onBaseSearch(baseINputText:HTMLInputElement){
+    console.log(baseINputText.value)
+    this.baseSearchKey=baseINputText.value
   }
 
 }

@@ -1,9 +1,9 @@
 <div class="filter-container">
   <span>Filter:</span>
-  <input type="radio" name="pricerange">
+  <input type="radio" name="pricerange" [(ngModel)]="initialSelectedRadioButton" value="all" (change)="radioButtonSelectionChanged()">
   <span>All{{'('+all+')'}}</span>
-  <input type="radio" name="pricerange">
+  <input type="radio" name="pricerange" [(ngModel)]="initialSelectedRadioButton" value="med" (change)="radioButtonSelectionChanged()">
   <span><30000{{'('+mediumPrice+')'}}</span>
-  <input type="radio" name="pricerange">
+  <input type="radio" name="pricerange" [(ngModel)]="initialSelectedRadioButton" value="max" (change)="radioButtonSelectionChanged()">
   <span>>30000{{'('+abovemaximumPrice+')'}}</span>
 </div>

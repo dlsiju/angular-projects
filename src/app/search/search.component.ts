@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class SearchComponent {
 
   searchKeyword:string = ''
-
+  filterPriceValue='all'
   products=[
     {
       name:"Apple",
@@ -47,4 +47,10 @@ export class SearchComponent {
   allProductCount=this.products.length
   mediumPriceProductCount=this.products.filter(p=>p.price<30000).length
   maximumPriceProductCount=this.products.filter(p=>p.price>30000).length
+
+  filterRadioChanged(eventValue:string){
+    console.log("filter radio changed called=",eventValue)
+    this.filterPriceValue=eventValue
+    console.log('selected price='+this.filterPriceValue)
+  }
 }
