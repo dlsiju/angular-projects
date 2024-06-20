@@ -13,26 +13,51 @@ import { BrandComponent } from './brand/brand.component';
 import { ProductComponent } from './search/product/product.component';
 import { FilterComponent } from './search/filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductviewComponent } from './search/productview/productview.component';
+import { DefaultComponent } from './default/default.component';
+import { RouterModule, Routes } from '@angular/router';
+import { InvalidComponent } from './invalid/invalid.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { HttpClientModule  } from '@angular/common/http';
+import { BranditemdetailsComponent } from './branditemdetails/branditemdetails.component';
+import { ProductListSerivce } from './productlist/productList.service';
+import { BrandItemDetailsService } from './branditemdetails/branditemservice.service';
+
+const routes:Routes=[
+  {path:'login',component:LoginComponent},
+  {path:'abc',redirectTo:'login'},
+  {path:'aboutus',component:AboutusComponent},
+  {path:'mobiles/:brand',component:BranditemdetailsComponent},
+  {path:'**',component:InvalidComponent}
+]
+
 @NgModule({
   declarations: [
     AppComponent,
     ReistrationComponent,
     HeaderComponent,
-    LoginComponent,
     TopBannerComponent,
     ProductlistComponent,
     SearchComponent,
     BrandComponent,
     ProductComponent,
     FilterComponent,
+    ProductviewComponent,
+    DefaultComponent,
+    InvalidComponent,
+    AboutusComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
+    MatSlideToggleModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BrandItemDetailsService,ProductListSerivce,ProductlistComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

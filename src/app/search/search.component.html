@@ -9,6 +9,6 @@
 </div>
 <app-filter [all]="allProductCount" [mediumPrice]="mediumPriceProductCount" [abovemaximumPrice]="maximumPriceProductCount" (eventEmiter)="filterRadioChanged($event)"></app-filter>
 
-<div *ngFor="let prod of products">
+<div *ngFor="let prod of products" (click)="selectedProduct=prod">
     <app-product [prod]="prod" *ngIf="(filterPriceValue==='med'?prod.price<30000:filterPriceValue=='max'?prod.price>30001:prod.price>0)&&(prod.name.toLowerCase().includes(searchKeyword.toLowerCase()))"></app-product>
 </div>

@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'productlist',
   templateUrl: './productlist.component.html',
   styleUrls: ['./productlist.component.css']
 })
-export class ProductlistComponent {
-
+export class ProductlistComponent implements OnInit{
+ 
    results:any = [];
    productType=''
    productCount=0;
   product1={
     name : 'PHONE',
-    brand:'Rredmi',
+    brand:'Xiaomi',
     price:54000,
     discountprice:2000,
     image:'assets/images/redmi_11_prime_5g_light_india_3.png',
@@ -32,15 +32,25 @@ export class ProductlistComponent {
   }
   product4={
     name : 'PHONE',
-    brand:'LG',
+    brand:'Vivo',
     price:63044,
     discountprice:3000
   }
   product5={
     name : 'PHONE',
-    brand:'Apple',
+    brand:'Poco',
     price:300000,
     discountprice:5000
+  }
+
+  ngOnInit(): void {
+    console.log('product init called and store in results')
+    this.results.push(this.product1)
+    this.results.push(this.product2)
+    this.results.push(this.product3)
+    this.results.push(this.product4)
+    this.results.push(this.product5)
+    console.log('results size=',this.results)
   }
 
   initializeProduct(){

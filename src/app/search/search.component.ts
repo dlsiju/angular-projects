@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'product-search',
@@ -9,9 +10,10 @@ export class SearchComponent {
 
   searchKeyword:string = ''
   filterPriceValue='all'
+  selectedProduct:Product;
   products=[
     {
-      name:"Apple",
+      name:"Appleee",
       price:35000,
       color:"Blue",
       ram:[6,8,16],
