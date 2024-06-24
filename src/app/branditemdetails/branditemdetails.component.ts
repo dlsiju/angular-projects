@@ -37,6 +37,7 @@ onBackClick() {this.router.navigate([''])
      console.log('id value=',this.id)
      console.log('id by observable=',this.brandName)
      this.prod=this.brandService.getProductsByBrand(this.brandName)
+     console.log('filtered prod size=',this.prod)
      console.log('name=',this.prod.name)
      console.log('price=',this.prod.price)
 

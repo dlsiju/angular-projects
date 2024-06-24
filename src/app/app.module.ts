@@ -8,27 +8,29 @@ import { LoginComponent } from './login/login.component';
 import { TopBannerComponent } from './header/top-banner/top-banner.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { SearchComponent } from './search/search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { BrandComponent } from './brand/brand.component';
 import { ProductComponent } from './search/product/product.component';
 import { FilterComponent } from './search/filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductviewComponent } from './search/productview/productview.component';
-import { DefaultComponent } from './default/default.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InvalidComponent } from './invalid/invalid.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClientModule  } from '@angular/common/http';
 import { BranditemdetailsComponent } from './branditemdetails/branditemdetails.component';
-import { ProductListSerivce } from './productlist/productList.service';
 import { BrandItemDetailsService } from './branditemdetails/branditemservice.service';
+import { ContactusComponent } from './contactus/contactus.component';
+import { ContactUsService } from './contactus/contactus.service';
+import { ProductListSerivce } from './productlist/productlist.service';
 
 const routes:Routes=[
   {path:'login',component:LoginComponent},
   {path:'abc',redirectTo:'login'},
   {path:'aboutus',component:AboutusComponent},
   {path:'mobiles/:brand',component:BranditemdetailsComponent},
+  {path:'contactus',component:ContactusComponent,canActivate:[ContactUsService]},
   {path:'**',component:InvalidComponent}
 ]
 
@@ -44,7 +46,6 @@ const routes:Routes=[
     ProductComponent,
     FilterComponent,
     ProductviewComponent,
-    DefaultComponent,
     InvalidComponent,
     AboutusComponent
 
@@ -55,9 +56,10 @@ const routes:Routes=[
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     MatSlideToggleModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [BrandItemDetailsService,ProductListSerivce,ProductlistComponent],
+  providers: [BrandItemDetailsService,ProductListSerivce,ProductlistComponent,ContactUsService,LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

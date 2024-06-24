@@ -6,6 +6,7 @@ export class ProductListSerivce{
     constructor(private productListComponent:ProductlistComponent){}
 
     public getProductList(){
+        this.productListComponent.initializeProduct()
         console.log('getProductList method calleddddddddddddd')
         console.log('sizeeeeee=',this.productListComponent.results)
        return  this.productListComponent.results

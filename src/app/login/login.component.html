@@ -1,11 +1,12 @@
-<form class="example-form" (ngSubmit)="onLoginSubmit">
+<h1>LOgin Here</h1>
+<form #templateForm="ngForm" class="example-form" (ngSubmit)="onLoginSubmit(templateForm)" novalidate>
   <mat-form-field class="example-full-width">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="email@abc.com" formControlName ="username">
+    <input matInput placeholder="email@abc.com" name="email" ngModel>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <mat-label>Password</mat-label>
-    <input type="password" matInput formControlName = "password">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="password" name="pass" ngModel/>
   </mat-form-field>
-  <button mat-raised-button type="submit">Login!</button> 
+  <button type="submit">Submit</button>
 </form>
