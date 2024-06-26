@@ -24,6 +24,7 @@ import { BrandItemDetailsService } from './branditemdetails/branditemservice.ser
 import { ContactusComponent } from './contactus/contactus.component';
 import { ContactUsService } from './contactus/contactus.service';
 import { ProductListSerivce } from './productlist/productlist.service';
+import { HomeComponent } from './home/home.component';
 
 const routes:Routes=[
   {path:'login',component:LoginComponent},
@@ -31,6 +32,7 @@ const routes:Routes=[
   {path:'aboutus',component:AboutusComponent},
   {path:'mobiles/:brand',component:BranditemdetailsComponent},
   {path:'contactus',component:ContactusComponent,canActivate:[ContactUsService]},
+  {path:'home',component:HomeComponent},
   {path:'**',component:InvalidComponent}
 ]
 
@@ -47,7 +49,8 @@ const routes:Routes=[
     FilterComponent,
     ProductviewComponent,
     InvalidComponent,
-    AboutusComponent
+    AboutusComponent,
+    HomeComponent
 
   ],
   imports: [
